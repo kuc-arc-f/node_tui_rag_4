@@ -35,7 +35,7 @@ https://openrouter.ai/models
 
 * RAG APP
 
-![img1](/images/ink_rag_4_2.png)
+![img1](./images/ink_rag_4_2.png)
 
 ***
 * LIB add
