@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include "include/dotenv.h"
 #include "include/my_rag.hpp"
 
 extern "C" {
@@ -12,6 +13,7 @@ extern "C" {
 
     char* rag_search(const char* input)
     {
+        dotenv::init();
         std::string input_str(input);
         //std::cout << "todo_add.Received in C++: " << input_str << std::endl;
         MyRag rLib("");

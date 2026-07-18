@@ -6,22 +6,17 @@
 
  date    : 2026/06/25
 
- update : 2026/06/28
+ update : 2026/07/17 
 
 ***
 
 node.js C++ , Ink TUI RAG SQLite OpenRouter
 
-* OpenRouter: openai/gpt-oss-20b:free
+* OpenRouter
 * embedding : Gemini-embedding-001
 * node 22
 * LLVM CLang
 * Linux
-
-***
-### vector data add
-
-https://github.com/kuc-arc-f/rust_cpp1/tree/main/rs_rag_4
 
 ***
 ### related
@@ -47,25 +42,30 @@ sudo apt install libcurl4-openssl-dev
 ```
 
 ***
-* example.db
-* rs_rag_4/example.db , file copy
-
+* table add
+```
+sqlite3 ./example.db < table.sql
+```
 ***
-### env value
+* .env
 
 ```
-export GEMINI_API_KEY=your-key
-
-export OPENROUTER_API_KEY=your-key
-export OPENROUTER_MODEL=openai/gpt-oss-20b:free
+OPENROUTER_API_KEY=
+OPENROUTER_MODEL=deepseek/deepseek-v4-flash
+GEMINI_API_KEY=
 ```
 
 ***
 * C++ build
 ```
+clang++ -std=c++17 -o embed embed.cpp -lsqlite3 -lcurl -luuid
 make all
 ```
 
+* embed
+```
+./embed ./data
+```
 ***
 * node start
 ```
